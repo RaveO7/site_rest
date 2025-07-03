@@ -11,8 +11,8 @@ const ContactSection = ({ onReservationOpen, restaurantName }) => {
     return <div className="p-8 text-center text-xl">Chargement du contact...</div>;
   }
   return (
-    <section id="contact" className="w-4/5 mx-auto py-20 px-4 fade-in" data-aos="fade-up">
-      <div className="flex flex-col md:flex-row items-stretch h-full">
+    <section id="contact" className="w-4/5 mx-auto py-20 px-4" >
+      <div className="flex flex-col md:flex-row items-stretch h-full fade-in" data-aos="fade-up">
         <div className="flex-1 flex flex-col justify-between">
           <h2 className="text-3xl font-lora font-bold mb-8 md:mb-0 text-primary">Contact</h2>
           <ul className="flex flex-col gap-4 text-lg mt-0 md:mt-8 md:ml-2">

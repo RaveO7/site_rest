@@ -125,7 +125,7 @@ function AppContent() {
           }
         `}</script>
       </Helmet>
-      <main className="bg-white text-gray-900 min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-white text-gray-900 rounded-t-2xl rounded-b-none">
         <div className="flex-1 flex flex-col">
           <Header
             restaurantName={name}
@@ -165,10 +165,10 @@ function AppContent() {
               reservationRef={reservationRef}
               setReservationSent={setReservationSent}
             />
-            <Footer restaurantName={name} />
           </Suspense>
         </div>
-      </main>
+        <Footer restaurantName={name} />
+      </div>
     </>
   );
 }

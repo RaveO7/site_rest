@@ -54,7 +54,7 @@ function Header({ restaurantName, restaurantSlogan, onReservationOpen, onBurgerC
         <p className="text-xl md:text-2xl text-white font-montserrat mb-8">{restaurantSlogan}</p>
         <button
           type="button"
-          className="btn px-8 py-3 bg-secondary text-white rounded-full font-bold shadow-lg hover:bg-primary transition"
+          className="btn px-8 py-3 bg-secondary  text-[#def4fa] rounded-full font-bold shadow-lg hover:bg-primary transition"
           onClick={() => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })}
         >
           Voir le menu
