@@ -103,7 +103,7 @@ function AppContent() {
         <meta name="twitter:title" content={`${name} - Restaurant à ${ville}`} />
         <meta name="twitter:description" content={meta_description || slogan} />
         <meta name="twitter:image" content={headerImage || '/favicon.ico'} />
-        <link rel="canonical" href={window.location.origin + '/'} />
+        <link rel="canonical" href={window.location.href.split('#')[0].split('?')[0]} />
         {/* Données structurées Schema.org */}
         <script type="application/ld+json">{`
           {
