@@ -1,0 +1,112 @@
+/* === VARIABLES PRINCIPALES ===
+   Modifiez ces variables pour changer les couleurs du site */
+:root {
+  --primary-color: #4F46E5; /* Couleur principale */
+  --secondary-color: #F59E42; /* Couleur secondaire */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Lora', serif;
+}
+
+/* === ANIMATIONS === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.slide-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* === TRANSITIONS BOUTONS/LINKS === */
+.btn, a {
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* === LIGHTBOX === */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* === ANIMATION FADE-IN POUR LE MENU (onglets) === */
+.animate-fade-in {
+  animation: fadeIn .5s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* === CACHER LA SCROLLBAR HORIZONTALE POUR LES ONGLETES === */
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Webkit */
+}
+
+/* === EFFET ZOOM SUR LES PHOTOS DE LA GALERIE === */
+.gallery-img {
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+}
+.gallery-img:hover, .gallery-img:focus {
+  transform: scale(1.08);
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+/* Animation pop au clic */
+.pop-on-click {
+  transition: transform 0.15s cubic-bezier(.4,2,.6,1.2);
+}
+.pop-on-click-animate {
+  animation: pop-bounce 0.35s cubic-bezier(.4,2,.6,1.2);
+}
+@keyframes pop-bounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.18); }
+  60% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+html {
+  scroll-behavior: smooth;
+} 
