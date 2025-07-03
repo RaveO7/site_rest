@@ -70,6 +70,8 @@ function AppContent() {
   const isSmall = useIsMdOrSmaller();
   const [showInfoMenu, setShowInfoMenu] = useState(false);
 
+  const baseUrl = process.env.REACT_APP_SITE_URL || window.location.origin;
+
   // Gestion ouverture/fermeture modale réservation
   const handleReservationOpen = () => {
     setShowReservation(true);
@@ -98,12 +100,12 @@ function AppContent() {
         <meta property="og:title" content={`${name} - Restaurant à ${ville}`} />
         <meta property="og:description" content={meta_description || slogan} />
         <meta property="og:image" content={headerImage || '/favicon.ico'} />
-        <meta property="og:url" content={window.location.origin} />
+        <meta property="og:url" content={baseUrl} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${name} - Restaurant à ${ville}`} />
         <meta name="twitter:description" content={meta_description || slogan} />
         <meta name="twitter:image" content={headerImage || '/favicon.ico'} />
-        <link rel="canonical" href={window.location.href.split('#')[0].split('?')[0]} />
+        <link rel="canonical" href={baseUrl + window.location.pathname} />
         {/* Données structurées Schema.org */}
         <script type="application/ld+json">{`
           {
@@ -119,7 +121,7 @@ function AppContent() {
             },
             "telephone": "${contact?.phone || ''}",
             "servesCuisine": "Française",
-            "url": "${window.location.origin}"
+            "url": "${baseUrl}"
           }
         `}</script>
       </Helmet>

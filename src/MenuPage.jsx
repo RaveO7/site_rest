@@ -5,10 +5,11 @@ import { Helmet } from 'react-helmet-async';
 
 function MenuPage() {
   const { name, menu } = useSiteData();
+  const baseUrl = process.env.REACT_APP_SITE_URL || window.location.origin;
   return (
     <>
       <Helmet>
-        <link rel="canonical" href={window.location.href.split('#')[0].split('?')[0]} />
+        <link rel="canonical" href={baseUrl + window.location.pathname} />
       </Helmet>
       <AccordionMenuDisplay menuData={menu} restaurantName={name} />
     </>
